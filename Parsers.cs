@@ -58,15 +58,8 @@ namespace ParseLib
         {
             if (TryGetParser(out IParser<T> parser))
             {
-                if (parser is null)
-                {
-                    result = default;
-                    return ParseFailureReason.NullParser;
-                }
-
                 return parser.TryParse(s, out result) ? ParseFailureReason.Success : ParseFailureReason.ParserFail;
             }
-
 
             result = default;
             return ParseFailureReason.NoParser;
@@ -133,7 +126,6 @@ namespace ParseLib
     {
         Success,
         NoParser,
-        NullParser,
         ParserFail
     }
 
