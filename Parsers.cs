@@ -9,6 +9,8 @@ namespace ParseLib
         T Parse(string s);
         T Parse(string s, IFormatProvider provider);
         bool TryParse(string s, out T result);
+        
+        // TODO
         //bool TryParse(string s, IFormatProvider provider, out T result);
     }
 
@@ -76,7 +78,7 @@ namespace ParseLib
         public static void UnsetParser<T>()
         {
             if (!TypeParsers.ContainsKey(typeof(T)))
-                throw new InvalidOperationException("T does not have a registered parser");
+                throw new InvalidOperationException("Type does not have a registered parser");
 
             TypeParsers.Remove(typeof(T));
         }
