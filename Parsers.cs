@@ -49,6 +49,7 @@ namespace ParseLib
             [typeof(double)] = Double,
             [typeof(decimal)] = Decimal,
             [typeof(bool)] = Bool,
+            [typeof(char)] = Char,
             [typeof(DateTime)] = DateTime,
             [typeof(TimeSpan)] = TimeSpan,
             [typeof(Version)] = Version
